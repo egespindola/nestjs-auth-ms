@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: qwerty
+      MARIADB_DATABASE: hcode_users
+      MARIADB_USER: docker
+      MARIADB_PASSWORD: docker
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
